@@ -4,9 +4,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-iOS%2018%2B-blue?style=flat-square)]()
-[![Release](https://img.shields.io/github/v/release/sendmebits/ghostmail-ios.svg?style=flat-square)](https://github.com/sendmebits/ghostmail-ios/releases)
-[![Issues](https://img.shields.io/github/issues/sendmebits/ghostmail-ios?style=flat-square)](https://github.com/sendmebits/ghostmail-ios/issues)
-[![Pull Requests](https://img.shields.io/github/issues-pr/sendmebits/ghostmail-ios?style=flat-square)](https://github.com/sendmebits/ghostmail-ios/pulls)
+[![Release](https://img.shields.io/github/v/release/sendmebits/ghostmail-ios.svg?style=flat-square)](https://github.com/00o-sh/ghostmail-ios/releases)
+[![Issues](https://img.shields.io/github/issues/sendmebits/ghostmail-ios?style=flat-square)](https://github.com/00o-sh/ghostmail-ios/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/sendmebits/ghostmail-ios?style=flat-square)](https://github.com/00o-sh/ghostmail-ios/pulls)
 
 [<img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store Download" height="40">](https://apps.apple.com/app/ghost-mail/id6741405019)
 
