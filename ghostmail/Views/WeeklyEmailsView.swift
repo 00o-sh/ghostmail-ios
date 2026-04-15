@@ -13,6 +13,18 @@ struct WeeklyEmailsView: View {
         let to: String
         let date: Date
         let action: EmailRoutingAction
+        let originalTo: String?
+        
+        /// The plus-addressed tag portion (e.g., "newsletter" for aaa+newsletter@domain.com)
+        var plusTag: String? {
+            guard let original = originalTo,
+                  let atIndex = original.firstIndex(of: "@"),
+                  let plusIndex = original.firstIndex(of: "+"),
+                  plusIndex < atIndex else {
+                return nil
+            }
+            return String(original[original.index(after: plusIndex)..<atIndex])
+        }
     }
     
     // Group emails by day
@@ -42,7 +54,8 @@ struct WeeklyEmailsView: View {
                         from: detail.from,
                         to: stat.emailAddress,
                         date: detail.date,
-                        action: detail.action
+                        action: detail.action,
+                        originalTo: detail.originalTo
                     )
                     emailsByDay[dayStart, default: []].append(email)
                 }
@@ -328,7 +341,7 @@ struct WeeklyEmailsView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                     }
                     
-                    // Date/Time and Status line
+                    // Date/Time, Plus-tag, and Status line
                     HStack(spacing: 8) {
                         HStack(spacing: 4) {
                             Image(systemName: "clock.fill")
@@ -337,6 +350,19 @@ struct WeeklyEmailsView: View {
                             Text(formatTime(email.date))
                                 .font(.system(.caption, design: .rounded, weight: .medium))
                                 .foregroundStyle(.secondary)
+                        }
+                        
+                        // Plus-address tag badge (moved to metadata row for better visibility)
+                        if let plusTag = email.plusTag {
+                            Text("+\(plusTag)")
+                                .font(.system(.caption2, design: .rounded, weight: .semibold))
+                                .foregroundStyle(.blue)
+                                .padding(.horizontal, 5)
+                                .padding(.vertical, 1)
+                                .background(
+                                    Capsule()
+                                        .fill(Color.blue.opacity(0.15))
+                                )
                         }
                         
                         // Status badge

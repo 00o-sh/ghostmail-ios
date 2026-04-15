@@ -1,4 +1,4 @@
-# Copilot Instructions for Ghost Mail iOS
+# Agent Instructions for Ghost Mail iOS
 
 ## Overview
 Ghost Mail is a SwiftUI iOS app for managing Cloudflare Email Routing aliases. Supports multi-zone configurations, sub-domains, iCloud sync, email statistics, and SMTP sending.
@@ -55,6 +55,7 @@ Ghost Mail is a SwiftUI iOS app for managing Cloudflare Email Routing aliases. S
 |-----|---------|---------|
 | `iCloudSyncEnabled` | `true` | CloudKit mirroring |
 | `showAnalytics` | `false` | Email statistics charts |
+| `statisticsHistoryDays` | `7` | Days of statistics |
 | `themePreference` | `"Auto"` | Light/Dark/Auto |
 | `defaultZoneId` / `defaultDomain` | `""` | Default zone for new aliases |
 | `showWebsiteLogo` | `true` | Favicon display |
@@ -86,14 +87,3 @@ Ghost Mail is a SwiftUI iOS app for managing Cloudflare Email Routing aliases. S
 | Add settings option | `SettingsView.swift` + AppStorage |
 | Modify sync | `ghostmailApp.swift` |
 | Add shared stats helper | `EmailStatisticsShared.swift`
-
-## Agent Instructions
-When the task requires multiple steps or non-trivial changes, present a detailed plan using #planReview and wait for approval before executing.
-
-If the plan is rejected, incorporate the comments and submit an updated plan with #planReview.
-
-When the user asks for a step-by-step guide or walkthrough, present it using #walkthroughReview.
-
-You must absolutely and always use #askUser before completing any task, even if there is no change, to confirm the result matches what the user asked for.
-
-When you think "finalize the conversation", always ask the user if they need anything else through the 'ask_user' tool before ending the conversation.
